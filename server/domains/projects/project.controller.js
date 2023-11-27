@@ -40,7 +40,7 @@ const addPost = async (req, res) => {
       workingPrev[`${curr.path}`] = curr.message;
       return workingPrev;
     }, {});
-    return res.status(422).render('project/addView', { project, errorModel });
+    return res.status(422).render('/book/add', { project, errorModel });
   }
   // En caso de que pase la validación
   // Se desestructura la información
@@ -56,7 +56,7 @@ const addPost = async (req, res) => {
     // Agregando mensaje de flash
     req.flash('successMessage', 'Proyecto agregado con exito');
     // Se redirecciona el sistema a la ruta '/project'
-    return res.redirect('/project/showDashboard');
+    return res.redirect('/book/add');
   } catch (error) {
     log.error(
       'ln 53 project.controller: Error al guardar proyecto en la base de datos',
@@ -81,7 +81,7 @@ const edit = async (req, res) => {
         .json({ fail: `No se encontro el proyecto con el id: ${id}` });
     }
     log.info(`Proyecto encontrado con el id: ${id}`);
-    return res.render('project/editView', { project });
+    return res.render('/book/add', { project });
   } catch (error) {
     log.error('Ocurre un error en: metodo "error" de project.controller');
     return res.status(500).json(error);
@@ -107,7 +107,7 @@ const editPut = async (req, res) => {
       workingPrev[`${curr.path}`] = curr.message;
       return workingPrev;
     }, {});
-    return res.status(422).render('project/editView', { project, errorModel });
+    return res.status(422).render('/book/add', { project, errorModel });
   }
   // Si no hay error
   const project = await ProjectModel.findOne({ _id: id });
@@ -127,7 +127,7 @@ const editPut = async (req, res) => {
     await project.save();
     // Generando mensaje FLASH
     req.flash('successMessage', 'Proyecto editado con exito');
-    return res.redirect(`/project/edit/${id}`);
+    return res.redirect(`/book/add${id}`);
   } catch (error) {
     log.error(`Error al actualizar proyecto con id: ${id}`);
     return res.status(500).json(error);

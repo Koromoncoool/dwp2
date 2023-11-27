@@ -1,16 +1,29 @@
 // importando mongoose
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 // Desestructurando la funcion Schema
 const { Schema } = mongoose;
 
-// Construcion de un Schema es un objeto vacio
-const ProjectSchema = new Schema({
-  name: {
+// Construccion de un Schema es un objeto vacío
+const BookSchema = new Schema({
+  title: {
     type: String,
     required: true,
   },
-  description: {
+  author: {
     type: String,
+    required: true,
+  },
+  category: {
+    type: String,
+    required: true,
+  },
+  isbn: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  copiesAvailable: {
+    type: Number,
     required: true,
   },
   date: {
@@ -18,6 +31,7 @@ const ProjectSchema = new Schema({
     default: Date.now,
   },
 });
-// copilando el schema
-// genera el modelo
-export default mongoose.model("project", ProjectSchema);
+
+// Compilando el schema
+// Genera el modelo
+export default mongoose.model('book', BookSchema);

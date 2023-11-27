@@ -1,25 +1,49 @@
-<!-- Dropdow para menu "Projectos" -->
-<ul id="dropdownMenu" class="dropdown-content">
+<!-- Dropdown para menú "Biblioteca" -->
+<ul id="library-dropdown-menu" class="dropdown-content">
   <li>
-    <a href="/project/showDashboard">
+    <a href="/book/add">
       <i class="large material-icons" style="margin: 2px;">
-        list
+        book
       </i>
-      Listar Proyectos
+      Registro de Libros
     </a>
   </li>
   <li class="divider"></li>
   <li>
-    <a href="/project/add">
+    <a href="/library/loans">
       <i class="large material-icons" style="margin: 2px;">
-        add_box
+        library_books
       </i>
-      Crear Proyecto
+      Préstamos y Devoluciones
+    </a>
+  </li>
+  <li>
+    <a href="/library/reservations">
+      <i class="large material-icons" style="margin: 2px;">
+        event_note
+      </i>
+      Reservas
+    </a>
+  </li>
+  <li>
+    <a href="/library/reports">
+      <i class="large material-icons" style="margin: 2px;">
+        description
+      </i>
+      Generar Reportes
+    </a>
+  </li>
+  <li>
+    <a href="/library/fines">
+      <i class="large material-icons" style="margin: 2px;">
+        monetization_on
+      </i>
+      Multas por Retardo
     </a>
   </li>
 </ul>
 
-<!-- Dropdow para menu "Usuarios" -->
+<!-- Dropdown para menú "Usuarios" -->
 <ul id="user-dropdown-menu" class="dropdown-content">
   <li>
     <a href="/user/login">
@@ -30,7 +54,7 @@
     </a>
   </li>
   <li class="divider"></li>
-    <li>
+  <li>
     <a href="/user/register">
       <i class="large material-icons" style="margin: 2px;">
         person_add
@@ -43,7 +67,16 @@
       <i class="large material-icons" style="margin: 2px;">
         logout
       </i>
-      Cerrar sesion
+      Cerrar Sesión
+    </a>
+  </li>
+  <!-- Agrega el siguiente elemento para la gestión de usuarios -->
+  <li>
+    <a href="/user/manage">
+      <i class="large material-icons" style="margin: 2px;">
+        supervisor_account
+      </i>
+      Gestión de Usuarios
     </a>
   </li>
 </ul>
@@ -52,9 +85,9 @@
 <nav class="teal darken-4">
   <div class="container">
     <div class="nav-wrapper">
-      <!-- Visulización de navegación en pantalla completa -->
+      <!-- Visualización de navegación en pantalla completa -->
       <a href="/" class="brand-logo">
-        📒 ProjNotes
+        📚 Biblioteca
       </a>
       <ul id="nav" class="right hide-on-med-and-down">
         <li>
@@ -75,8 +108,8 @@
         </li>
         <!-- Dropdown Trigger -->
         <li>
-          <a class="dropdown-trigger" href="#!" data-target="dropdownMenu">
-            Acciones
+          <a class="dropdown-trigger" href="#!" data-target="library-dropdown-menu">
+            Biblioteca
             <i class="material-icons right">
               arrow_drop_down
             </i>
@@ -92,7 +125,7 @@
           </a>
         </li>
       </ul>
-      <!-- Visulización de Navegación para moviles -->
+      <!-- Visualización de Navegación para móviles -->
       <a href="#" data-target="nav-mobile" class="sidenav-trigger">
         <i class="material-icons">
           menu
@@ -108,56 +141,8 @@
           </a>
         </li>
         <li class="divider"></li>
-        <li>
-          <a href="/project/showDasboard">
-            <i class="large material-icons left">
-              list
-            </i>
-            Listar Proyectos
-          </a>
-        </li>
-        <li>
-          <a href="/project/add">
-            <i class="large material-icons left">
-              add_box
-            </i>
-            Crear Proyecto
-          </a>
-        </li>
-        <li class="divider"></li>
-        <li>
-          <a href="/user/login">
-            <i class="material-icons left">
-              login
-            </i>
-            Ingresar
-          </a>
-        </li>
-        <li>
-          <a href="/user/register">
-            <i class="material-icons left">
-              person_add
-            </i>
-            Registrarse
-          </a>
-        </li>
-        <li>
-          <a href="/user/logout">
-            <i class="material-icons left">
-              logout
-            </i>
-            Cerrar Sesión
-          </a>
-        </li>
-        <li class="divider"></li>
-        <li>
-          <a href="/about">
-            <i class="material-icons left">
-              business
-            </i>
-            Acerca De.
-          </a>
-        </li>
+        <!-- ... Otros elementos del menú ... -->
+        <!-- Agregar los mismos elementos del menú principal y del dropdown -->
       </ul>
     </div>
   </div>

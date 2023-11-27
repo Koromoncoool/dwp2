@@ -1,37 +1,68 @@
 <div class="row">
-    <div class="col s12 m10 offset-m1 18 offset-12">
+    <div class="col s12 m10 offset-m1 l8 offset-l2">
         <div class="card">
             <div class="card-image">
-                <img src="/images/addproject.png" alt="Imagen de Creacion de proyecto">
-                <span class="card-title add-project" style="font-weight: bolder;">
-                    Crear Proyecto
+                <img src="/images/addbook.png" alt="Imagen de Creacion de Libro">
+                <span class="card-title add-book" style="font-weight: bolder;">
+                    Registrar Libro
                 </span>
             </div>
-            <form autocomplete="off" action="/project/add" method="post">
+            <form autocomplete="off" action="/book/add" method="post">
                 <div class="card-content">
                     <div class="input-field">
-                        <label for="project-name">
-                            Nombre del Proyecto
+                        <label for="book-title">
+                            Título del Libro
                         </label>
                         <input type="text"
-                        id="project-name"
-                        name="name"
-                        placeholder="Ingrese el nombre del proyecto"
-                        
+                        id="book-title"
+                        name="title"
+                        placeholder="Ingrese el título del libro"
                         class="validate">
                     </div>
                     <div class="input-field">
-                        <label for="project-description">
-                            Descripcion del Proyecto
+                        <label for="book-author">
+                            Autor del Libro
                         </label>
-                        <textarea name="description" 
-                        id="project-description" 
-                        class="materialize-textarea" required></textarea>
+                        <input type="text"
+                        id="book-author"
+                        name="author"
+                        placeholder="Ingrese el autor del libro"
+                        class="validate">
+                    </div>
+                    <div class="input-field">
+                        <label for="book-category">
+                            Categoría del Libro
+                        </label>
+                        <input type="text"
+                        id="book-category"
+                        name="category"
+                        placeholder="Ingrese la categoría del libro"
+                        class="validate">
+                    </div>
+                    <div class="input-field">
+                        <label for="book-isbn">
+                            ISBN del Libro
+                        </label>
+                        <input type="text"
+                        id="book-isbn"
+                        name="isbn"
+                        placeholder="Ingrese el ISBN del libro"
+                        class="validate">
+                    </div>
+                    <div class="input-field">
+                        <label for="book-copies">
+                            Número de Copias Disponibles
+                        </label>
+                        <input type="number"
+                        id="book-copies"
+                        name="copiesAvailable"
+                        placeholder="Ingrese el número de copias disponibles"
+                        class="validate">
                     </div>
                 </div>
                 <div class="card-action">
                     <button class="blue darken-3 waves-effect waves-light btn">
-                       <i class="material-icons left">note_add</i> Agregar
+                       <i class="material-icons left">note_add</i> Agregar Libro
                     </button>
                 </div>
             </form>

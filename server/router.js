@@ -13,6 +13,7 @@ const addRoutes = (app) => {
   app.use('/about', homeRouter);
   app.use('/user', userRouter);
   app.use('/project', projectsRouter);
+  app.use('/book/add', projectsRouter);
   // ERRORES
   // catch 404 and forward to error handler
   app.use((req, res, next) => {
