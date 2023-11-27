@@ -147,6 +147,18 @@ const deleteProject = async (req, res) => {
     return res.status(500).json(error);
   }
 };
+
+const loans = async (req, res) => {
+  try {
+    // Consultar todos los proyectos para el listado de préstamos
+    const projects = await ProjectModel.find({}).lean().exec();
+    res.render('project/loans', { projects });
+  } catch (error) {
+    log.error('Error al obtener proyectos para préstamos', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
+  }
+};
+
 export default {
   addForm,
   showDashboard,
@@ -154,4 +166,5 @@ export default {
   edit,
   editPut,
   deleteProject,
+  loans,
 };

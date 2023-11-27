@@ -1,0 +1,32 @@
+<!-- loansView.ejs -->
+
+<h1>Listado de Préstamos</h1>
+
+<div class="row">
+  {{#each projects}}
+    <div class="col s12">
+      <div class="card teal darken-4">
+        <div class="card-content teal-text text-lighten-5">
+          <span class="card-title">{{name}}</span>
+          <ul>
+            {{#each books}}
+              <li>
+                <strong>Título:</strong> {{title}}<br>
+                <strong>Estado:</strong> {{status}}<br>
+                {{#if borrowerName}}
+                  <strong>Prestatario:</strong> {{borrowerName}}<br>
+                  <strong>Fecha de devolución:</strong> {{dueDate}}<br>
+                {{/if}}
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class="card-action">
+          <!-- Agrega botones o enlaces según tus necesidades -->
+        </div>
+      </div>
+    </div>
+  {{else}}
+    <p>No hay proyectos que mostrar.</p>
+  {{/each}}
+</div>

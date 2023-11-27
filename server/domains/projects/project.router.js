@@ -23,6 +23,7 @@ router.get(['/', '/addForm', '/add'], projectController.addForm);
 // GET '/project/projects'
 router.get(['/showDashboard', '/projects'], projectController.showDashboard);
 router.get(['/book/add'], projectController.addForm);
+router.get(['/book/loans'], projectController.loans);
 
 // POST "/project/add"
 router.post(
